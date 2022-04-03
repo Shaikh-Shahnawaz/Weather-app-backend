@@ -18,20 +18,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-// routes middleware
 
 
 
 // server listen
-
-
 mongoose.connect(DB).then(data=>{
-    console.log('DB Connected !!')
-    app.listen(PORT,()=>{
-        console.log(`Server running at http://localhost:${PORT}`)
-    })
+  console.log('DB Connected !!')
+  app.listen(PORT,()=>{
+    console.log(`Server running at http://localhost:${PORT}`)
+  })
 }).catch(err=>console.log(err))
 
+
+// routes middleware
 app.use("/api/weather", router);
 
 
